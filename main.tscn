@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnoluuwc3ddwq"]
+
+[ext_resource type="Script" path="res://scripts/player/Player.cs" id="1_3upbt"]
+[ext_resource type="Script" path="res://scripts/player/Animation.cs" id="1_mnwvp"]
+[ext_resource type="PackedScene" uid="uid://b3isom73mjyqk" path="res://aseprite/player_right.aseprite" id="1_xcooc"]
+[ext_resource type="PackedScene" uid="uid://bmjotiifp1crv" path="res://aseprite/player_down.aseprite" id="2_jjsyh"]
+[ext_resource type="PackedScene" uid="uid://f2uhlwmxiq7y" path="res://aseprite/player_up.aseprite" id="3_5se5j"]
+
+[node name="Root" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("1_3upbt")
+_speed = 32.0
+
+[node name="Animation" type="Node2D" parent="Player" node_paths=PackedStringArray("_right", "_up", "_down")]
+script = ExtResource("1_mnwvp")
+_right = NodePath("Right")
+_up = NodePath("Up")
+_down = NodePath("Down")
+
+[node name="Right" parent="Player/Animation" instance=ExtResource("1_xcooc")]
+texture_filter = 1
+position = Vector2(2, 0)
+autoplay = "default"
+centered = false
+offset = Vector2(-2, 0)
+
+[node name="Down" parent="Player/Animation" instance=ExtResource("2_jjsyh")]
+visible = false
+texture_filter = 1
+autoplay = "default"
+centered = false
+
+[node name="Up" parent="Player/Animation" instance=ExtResource("3_5se5j")]
+visible = false
+texture_filter = 1
+autoplay = "default"
+centered = false
