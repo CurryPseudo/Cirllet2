@@ -2,13 +2,13 @@
 
 importer="Aseprite AnimatedSprite2D Import"
 type="PackedScene"
-uid="uid://bmjotiifp1crv"
-path="res://.godot/imported/player_down.aseprite-3a23a303527271afc6bd8e80e35d9f1e.scn"
+uid="uid://bocacei7xklsr"
+path="res://.godot/imported/right_walk.aseprite-13984880831ea3050cd16361dad84660.scn"
 
 [deps]
 
-source_file="res://aseprite/player_down.aseprite"
-dest_files=["res://.godot/imported/player_down.aseprite-3a23a303527271afc6bd8e80e35d9f1e.scn"]
+source_file="res://aseprite/player/right_walk.aseprite"
+dest_files=["res://.godot/imported/right_walk.aseprite-13984880831ea3050cd16361dad84660.scn"]
 
 [params]
 

@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnoluuwc3ddwq"]
+[gd_scene load_steps=9 format=3 uid="uid://cnoluuwc3ddwq"]
 
 [ext_resource type="Script" path="res://scripts/player/Player.cs" id="1_3upbt"]
 [ext_resource type="Script" path="res://scripts/player/Animation.cs" id="1_mnwvp"]
-[ext_resource type="PackedScene" uid="uid://b3isom73mjyqk" path="res://aseprite/player_right.aseprite" id="1_xcooc"]
-[ext_resource type="PackedScene" uid="uid://bmjotiifp1crv" path="res://aseprite/player_down.aseprite" id="2_jjsyh"]
-[ext_resource type="PackedScene" uid="uid://f2uhlwmxiq7y" path="res://aseprite/player_up.aseprite" id="3_5se5j"]
+[ext_resource type="PackedScene" uid="uid://b3isom73mjyqk" path="res://aseprite/player/right.aseprite" id="1_xcooc"]
+[ext_resource type="PackedScene" uid="uid://bmjotiifp1crv" path="res://aseprite/player/down.aseprite" id="2_jjsyh"]
+[ext_resource type="PackedScene" uid="uid://f2uhlwmxiq7y" path="res://aseprite/player/up.aseprite" id="3_5se5j"]
+[ext_resource type="PackedScene" uid="uid://bocacei7xklsr" path="res://aseprite/player/right_walk.aseprite" id="6_h1hta"]
+[ext_resource type="PackedScene" uid="uid://bi35a7rjlix3t" path="res://aseprite/player/down_walk.aseprite" id="7_0lgel"]
+[ext_resource type="PackedScene" uid="uid://da1ygj63s405r" path="res://aseprite/player/up_walk.aseprite" id="8_784bd"]
 
 [node name="Root" type="Node2D"]
 
@@ -14,11 +17,14 @@
 script = ExtResource("1_3upbt")
 _speed = 32.0
 
-[node name="Animation" type="Node2D" parent="Player" node_paths=PackedStringArray("_right", "_up", "_down")]
+[node name="Animation" type="Node2D" parent="Player" node_paths=PackedStringArray("_right", "_up", "_down", "_right_walk", "_up_walk", "_down_walk")]
 script = ExtResource("1_mnwvp")
 _right = NodePath("Right")
 _up = NodePath("Up")
 _down = NodePath("Down")
+_right_walk = NodePath("RightWalk")
+_up_walk = NodePath("UpWalk")
+_down_walk = NodePath("DownWalk")
 
 [node name="Right" parent="Player/Animation" instance=ExtResource("1_xcooc")]
 texture_filter = 1
@@ -34,6 +40,24 @@ autoplay = "default"
 centered = false
 
 [node name="Up" parent="Player/Animation" instance=ExtResource("3_5se5j")]
+visible = false
+texture_filter = 1
+autoplay = "default"
+centered = false
+
+[node name="RightWalk" parent="Player/Animation" instance=ExtResource("6_h1hta")]
+visible = false
+texture_filter = 1
+autoplay = "default"
+centered = false
+
+[node name="DownWalk" parent="Player/Animation" instance=ExtResource("7_0lgel")]
+visible = false
+texture_filter = 1
+autoplay = "default"
+centered = false
+
+[node name="UpWalk" parent="Player/Animation" instance=ExtResource("8_784bd")]
 visible = false
 texture_filter = 1
 autoplay = "default"
